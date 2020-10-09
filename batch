@@ -1,0 +1,11 @@
+@echo off
+msiexec /i C:\gcpwstandaloneenterprise64.msi
+echo Installation complete
+REG ADD HKLM\Software\Google\GCPW\ /v domains_allowed_to_login -d cloudfactory.com
+echo Registry edit done
+REG ADD HKLM\Software\Google\GCPW\ /v enable_dm_enrollment /t REG_DWORD /d 1
+echo Registry edit done
+REG ADD HKLM\Software\Google\GCPW\ /v validity_period_days /t REG_DWORD /d 5
+echo Registry edit done
+REG ADD HKLM\Software\Google\GCPW\ /v enable_multi_user_login /t REG_DWORD /d 0
+echo Registry edit done
